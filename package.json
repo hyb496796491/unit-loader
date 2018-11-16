@@ -1,0 +1,39 @@
+{
+  "name": "unit-loader",
+  "version": "0.1.0",
+  "description": "unit transform loader for webpack ",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier --write 'src/**/*.{js}'",
+    "build": "node script/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superTerrorist/unit-loader.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier && git add src"
+    }
+  },
+  "keywords": [
+    "webpack",
+    "loader",
+    "unit"
+  ],
+  "author": "superTerrorist",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/superTerrorist/unit-loader/issues"
+  },
+  "homepage": "https://github.com/superTerrorist/unit-loader#readme",
+  "dependencies": {
+    "postcss": "^7.0.5"
+  },
+  "devDependencies": {
+    "husky": "^1.1.4",
+    "prettier": "^1.15.2",
+    "standard-version": "^4.4.0"
+  }
+}
