@@ -35,58 +35,26 @@ And run `webpack` via your preferred method.
 
 ## Options
 
-### `from`
-
-Type: `String`
-Default: `px`
-
-The unit you want to replace
-
-### `to`
-
-Type: `String`
-Default: `rem`
-
-### `ratio`
-
-Type: `Number`
-Default: `1`
-
-the number to calculate,for instance：
-
-```css
-// css rule
-.test{
-    font-size: 20px;
-}
-```
-if the ratio is 0.5,the result will be
-```
-.test{
-    font-size: 10rem;
-}
-```
-
-### `include`(Must have)
+### `include`
 
 Type: `Array`
 Default: `[]`
 
 set the property you want to transform
 
-### `exclude`(Must have)
+### `exclude`
 
 Type: `Array`
 Default: `[]`
 
 the property in exclude array will not be transform
 
-### `transform`(Must have)
+### `plugin`
 
-Type: `Function`,
-Default: `undefined`
+Type: `Object`,
+Default: `{ use: 'easyTransformPlugin',option: { from: 'px',to: 'rem',ratio: 1 } }`
 
-if you need different way to calculate value,the `transform` function will be a best choice:
+if you need a different way to transform the unit, the `plugin` option give you the ability:
 
 ```js
 
@@ -98,8 +66,13 @@ if you need different way to calculate value,the `transform` function will be a 
         { 
             loader: 'unit-loader',
             options: {
-                transform: function(valueWithoutNumber){
-                    return parseInt(valueWithoutNumber*0.6)
+                plugin: {
+                    use: function(value,property,selector,option){
+                        // here is your transform code 
+                        // note must return string
+                        return '0vm';
+                    },
+                    option: {}
                 }
             }
         }
