@@ -1,6 +1,6 @@
 {
   "name": "unit-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "unit transform loader for webpack ",
   "main": "index.js",
   "scripts": {

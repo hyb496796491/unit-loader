@@ -1,23 +1,14 @@
 {
     "type": "object",
     "properties": {
-        "from": {
-            "type": "string"
-        },
-        "to": {
-            "type": "string"
-        },
-        "ratio": {
-            "type": "number"
-        },
         "include": {
             "type": "array"
         },
         "exclude": {
             "type": "array"
         },
-        "transform": {
-            "instanceof": "Function"
+        "plugin": {
+            "type": "object"
         }
     }
 }
